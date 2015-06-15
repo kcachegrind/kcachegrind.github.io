@@ -1,0 +1,60 @@
+= 13.3.04: Calltree 0.9.7
+
+* Support for Valgrind 2.1.0, 2.1.1.
+* Fix for reentrant signal handlers.
+
+= 11.11.03: Calltree 0.9.6
+
+* Support for Valgrind 2.0.0
+
+= 29.10.03: Calltree 0.9.5
+
+* New: Command line tool ct_control, allows for inspection and control
+of applications running under Calltree. Use it to get statistics,
+the current stack trace, and current event counters. You can request
+zeroing of counters, dumps and kill the processes.
+* ct_annotate is working again with the latest cachegrind.out format.
+* Documentation update (HTML page with usage, command line reference
+and dump format description).
+
+= 26.9.03: KCachegrind 0.4.4
+
+Bug fix release.
+* Corrected calculation of inclusive cost of cycles.
+* Better drawing of cycles in the Call-Graph-View.
+* Inclusion of [ContribPython hotshot2cachegrind]. For information
+on usage, see the comment on top of the script.
+
+= 8.9.03: KCachegrind 0.4.3
+
+This is a cleanup release.
+* Compiles with QT 3.0 again (e.g. RedHat 8.0).
+* Some Style Guide Fixes merged back from the KDE CVS Branch of KCachegrind (to come
+with KDE 3.2).
+* Removed the "Cum." title from column headers. In fact, "inclusive cost" is shown here,
+and not the aggregating self costs from the top as in GProf tables.
+* Lists now have a maximum entry number option instead of minimum cost limit. And the last entry shows the number of functions skipped in the list.
+* Source directories for the Source View are related to ELF objects now (in the configure
+dialog). This is needed for KCachegrind to be able to show the right source sometimes.
+* The Part View is (almost) fully functional now. Selecting profile parts wasn't possible
+before.
+* Treemap keyboard navigation and selection reworked. Right clicking now selects
+the item below first.
+
+= 28.8.03: KCachegrind 0.4.2.
+
+Crash fix release.
+* Don't crash on Profile data Reload when the Call Graph View is visible.
+* This is the version initially imported into KDE CVS for KDE 3.2.
+
+= 14.8.03. KCachegrind 0.4.1.
+Bug fix release.
+* Compiles with KDE 3.0 / QT 3.0.
+
+{{ChangeLog030729}}
+
+{{ChangeLog030719}}
+
+= More...
+
+Older Items can be found [ChangeLogOld here].

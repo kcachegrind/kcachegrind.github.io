@@ -1,0 +1,15 @@
+= Patch for Calltree 0.9.7 to run with Valgrind 2.1.2
+
+Apply the follow patch (or modify manually the one number from 5 to 6 in configure.in):
+
+ --- configure.in.old    2004-08-04 11:54:55.211422776 +0200
+ +++ configure.in        2004-08-04 11:55:52.811666208 +0200
+ @@ -60,7 +60,7 @@
+  CFLAGS="-I $VG_INCDIR"
+  AC_TRY_RUN([
+  #include "vg_skin.h"
+ -int main() { return (VG_CORE_INTERFACE_MAJOR_VERSION > 5) ? 1:0; }
+ +int main() { return (VG_CORE_INTERFACE_MAJOR_VERSION > 6) ? 1:0; }
+  ], [
+  AC_MSG_RESULT([Yes])
+  ], [

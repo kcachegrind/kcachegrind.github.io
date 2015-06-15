@@ -1,0 +1,21 @@
+= 29.7.03: KCachegrind 0.4.0
+
+This is an unstable alpha snapshot of the next release. If you are adventurious, check it out, but let me know if it is working for you. You will find a bunch of new features: 
+* Info panel reorganisation: This was one tab widget, now it can be splitted to no less than 4 areas. See the context menu on tabs. Some old tabs now are separated into 2 (e.g. Callers/Callees), as with the new design it's better to have less info on one tab. 
+New info tab: Interactive, versatile Call Graph View. This uses the "dot" graph layout tool from graphviz in the background. Still, you don't need it for compiling KCachegrind; it's a runtime dependency. 
+
+* New info tab: Annotated Assembler view. This needs calltree runs to be called with option --dump-instr=yes. Like the Call Graph, this one uses "objdump" from binutils to get disassembled code; likewise only a runtime option. To see arrows for (conditional) jumps, use calltree with --trace-jump=yes. Note: The annotated source will also get arrows this way, but they are buggy, as consecutive instructions from different source lines won't get jump arrows. 
+
+* The "Profile dump" dockable has no functionality so far. This will become a profile file browser and a control GUI for running calltree processes. 
+
+* Lots of other unvisible changes. 
+
+* Lots of bugs... 
+
+== Calltree Skin V 0.9.3
+
+Minor Bugfix release.
+
+* Compiles with Valgrind-20030725 and probably even with yet not released Valgrind versions. This is because Valgrind now installs the skin header file (vg_skin.h). And Calltree checks now the skin interface version instead of Valgrind version for compatibility. And the skin version should change much less often than Valgrind versions are released. 
+
+* Takes less space with extensive --fn-recursion/--fn-caller options. 

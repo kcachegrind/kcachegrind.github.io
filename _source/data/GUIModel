@@ -1,0 +1,26 @@
+= The basic Data Model for Profile Data
+
+== Cost Entities
+
+Cost counts of event types (like ''L2 Misses'') are attributed to cost entities, which are items with relationship to source code or data structures of a given program.
+Cost entities not only can be simple code or data positions, but also
+position tupels. E.g., a call has a source and a target, or a data address can have a data type and an code position where its allocation has happened.
+
+The cost entities known to KCachegrind are listed
+[[GUICostEntities here]].
+
+== Event Types
+
+Arbitrary event types can be specified in the profile data by
+giving them a name. Their cost related to a cost entity is a 64-bit integer.
+
+Event types whose costs are specified in a profile data file are called
+''real'' events. Additionally, one can specify formulas for event types
+calculated from real events, which are called ''inherited'' events.
+
+
+
+
+
+$title    = Data Model for Profile Data
+$location = [[Home]] / [[Documentation]] / Data Model

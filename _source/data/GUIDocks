@@ -1,0 +1,46 @@
+== Flat Profile
+
+The flat profile contains a group list and a function
+list. The group list contains all groups where cost
+is spent in, depending on the chosen group type.
+The group list is hidden when grouping is switched off.
+
+The function list contains the functions of the
+selected group (or all functions if grouping is switched off),
+ordered by some column, e.g. inclusive or self costs spent therein.
+There is a maximal number of functions shown in the list, which is
+configurable in Settings/Configure KCachegrind.
+
+== Parts Overview
+
+In a profile run, multiple profile data files can be produced,
+which can be loaded together into KCachegrind.
+The Parts Overview dockable shows these, horizontally ordered
+according creation time; the rectangle sizes are proportional to the
+cost spent in the parts. You can select one or several
+parts to constrain the costs shown in the other KCachegrind views to these parts only.
+
+The parts are further subdivided: there is a partitioning and an inclusive cost split mode:
+* Partitioning: You see the
+partitioning into groups for a profile data part, according to
+the group type selected. E.g. if ELF object groups are
+selected, you see colored rectangles for each
+used ELF object (shared library or executable), sized
+according to the cost spent therein.
+* Inclusive Cost Split: A rectangle showing the inclusive
+cost of the current active function in the part is shown.
+This again is split up to show inclusive costs of its callees.
+
+
+== Call Stack
+
+This is a purely fictional 'most probable' call stack.
+It is built up by starting with the current active
+function and adds the callers/callees with highest cost
+at the top and to bottom.
+
+The ''Cost'' and ''b>Calls'' columns show the cost used
+for all calls from the function in the line above.
+
+$title    = Side-Docks
+$location = [[Home]] / [[Documentation]] / GUI

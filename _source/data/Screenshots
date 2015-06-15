@@ -1,0 +1,30 @@
+== Screenshots
+
+These screenshots show KCachegrind with a profiling trace of itself. The trace consists of several parts. 
+
+Click on the images to see them enlarged, together with a more detailed explanation of what can be seen.
+
+<center><table><tr>
+<td align=center valign=center>
+[[Shot1 KcgShot1Small.png]]
+
+After starting up, function "main" is selected.
+
+</td><td align=center valign=center>
+[[Shot2 KcgShot2Small.png]]
+
+Coverage lists and call tree graph visualisation in proportional mode.
+
+</td></tr><tr><td align=center valign=center>
+[[Shot3 KcgShot3Small.gif]]
+
+On the right the call graph view.
+
+</td><td align=center valign=center>
+[[Shot4 KcgShot4Small.png]]
+
+Source intermixed with profiling data. 
+</td></tr></table>
+
+$title    = Screenshot Tour
+$location = [[Home]] / [[Documentation]] / Screenshots

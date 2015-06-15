@@ -1,0 +1,90 @@
+<head>
+<title>Installation</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Download.html">Download</a> / Installation </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Installation of Callgrind</h2>
+Unpack Callgrind into a directory and install it by running
+<p>
+<pre>
+  ./configure
+  make
+  make install (as "root" if needed)
+</pre><p>
+This will find your Valgrind installation path and copy the new tool nearside.
+The script "callgrind" is supplied to run valgrind with the callgrind tool.
+It is the same as running "valgrind --tool=callgrind ...".
+<p>
+<h2> Installation of KCachegrind </h2>
+<h3> Requirements</h3>
+<p>
+<ul>
+<li>Qt 3.x (with development package)
+<li>KDE libraries (kdelibs)
+from KDE 3.0.x or KDE 3.1.x or KDE 3.2.x (with development package)
+</ul>
+<p>
+KCachegrind will call some command line tools in the background.
+These are a runtime requirement, i.e. KCachegrind will warn you 
+at runtime if they are not found. Follwoing packages should be installed:
+<ul>
+<li>binutils. Command 'objdump' is used as disassembler for the Assembler View.
+<li>graphviz. Command 'dot' is used for graph layouting in the Callgraph View.
+</ul>
+<p>
+<h3> Compilation and Installation</h3>
+<p>
+Make sure that you have installed KDE 3.x with according development packages.
+If you want to install KCachegrind in a system wide manner, get the global
+installation directory of KDE by running
+<p>
+<pre>
+  kde-config --prefix
+</pre><p>
+Unpack the KCachegrind sources into a directory and install KCachegrind by running (supposing /opt/kde3 as your global KDE installation directory)
+<p>
+<pre>
+  ./configure --prefix=/opt/kde3
+  make
+  make install (as "root" if needed)
+</pre><p>
+If you don't specify a prefix to "configure", KCachegrind will be installed into /usr/local/kde. If you don't have root permission, choose e.g. $HOME/kde as prefix. In this case, you have to set KDEDIR=$HOME/kde additionally. Put $HOME/kde/bin into your path, too.
+<p>
+Simple running "kcachegrind" should open an toplevel window with no trace loaded. 
+<p>
+</td></tr></table>
+</div>
+</body>

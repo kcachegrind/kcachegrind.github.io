@@ -1,0 +1,65 @@
+= Similar Tools
+
+Remark: This is an arbitrary list of tools, partly from research area
+(for which it will be difficult to find source at all).
+
+== Free/Research Profiling Tools
+
+* Perf Events for Linux (since 2.6.31,
+"perf" sources in Linux kernel source tree)
+* OProfile (System wide sampling for Linux)
+* Perfmon2 (access to PMU on Linux/Itanium, needs patch for other
+architectures, superceeded by Perf Events for Linux)
+* <a href="http://hpctoolkit.org">HPCToolkit</a>.
+* PAPI: API for reading PMU counters
+* MemSpy (Martonosi/Gupta/Anderson)
+* CProf (Lebeck/Wood)
+* VProf 
+* MTools (Goldberg/Hennessy)
+* MHSim (Fowler/Mellor-Crummey/Whalley)
+* SIP (Berg/Hagersten)
+* DCPI (HP Profiling Infrastructure for Alpha Processors)
+
+== Commercial Profilers
+
+* Intel VTune
+* IBM Rational Quantify
+* Zoom from <a href="http://www.rotateright.com">RotateRight</a>
+
+== Related
+
+* <a href="http://dev.gauldong.net/wincachegrind/">WinCacheGrind</a>
+is a Windows software able to read Callgrind-formatted profile data,
+mainly targeted at reading files produced by
+<a href="http://www.xdebug.org/">xdebug 2</a>,
+a PHP debugger.
+
+* Static instrumentors:
+ATOM, <a href="http://www.elis.ugent.be/fit/index.html">FIT</a>
+
+* PIN (similar to Valgrind, for x86/Itanium/ARM, from Intel)
+
+
+
+= What people say about...
+
+<small><i>[Mostly excerpts from some mailing lists. Please send me an
+EMail for your own external reference or if you want your citation removed.]</i></small>
+
+* "... kcachegrind is a marvelous tool by the way, try it if you can.
+Too bad it requires KDE3, or we'd be using it at work everyday ..."
+(<a href="http://www.freetype.org/pipermail/devel/2004-June/010830.html">Link</a>)
+
+* "... finally took some time to install kcachegrind. What a wonderful tool. I finally understood how to use all those lists and numbers to actually make stuff faster. Kcachegrind visualizes the information very good, especially the source code view totally rocks."
+(<a href="http://www.advogato.org/person/kristian/diary.html?start=18">Link</a>)
+
+* "... I am also doing some profiling analysis on the test programs using
+valgrind/cachegrind/kcachegrind combination. This combination gives a
+really good profiling tool."
+(<a href="http://cairographics.org/pipermail/cairo/2003-June/000104.html">Link</a>)
+
+* "...  Use cachegrind with the excellent visualisation tool kcachegrind."
+(<a href="http://www.rosegardenmusic.com/resources/links/">Link</a>)
+
+$title    = Links
+$location = [[Home]] / Links

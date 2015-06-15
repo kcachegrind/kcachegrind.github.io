@@ -1,0 +1,47 @@
+= Installation of Callgrind
+
+Unpack Callgrind into a directory and install it by running
+ 
+  ./configure
+  make
+  make install (as "root" if needed)
+
+This will find your Valgrind installation path and copy the new tool nearside.
+The script "callgrind" is supplied to run valgrind with the callgrind tool.
+It is the same as running "valgrind --tool=callgrind ...".
+
+
+= Installation of KCachegrind 
+
+== Requirements
+
+* Qt 3.x (with development package)
+* KDE libraries (kdelibs)
+from KDE 3.0.x or KDE 3.1.x or KDE 3.2.x (with development package)
+
+KCachegrind will call some command line tools in the background.
+These are a runtime requirement, i.e. KCachegrind will warn you 
+at runtime if they are not found. Follwoing packages should be installed:
+* binutils. Command 'objdump' is used as disassembler for the Assembler View.
+* graphviz. Command 'dot' is used for graph layouting in the Callgraph View.
+
+== Compilation and Installation
+
+Make sure that you have installed KDE 3.x with according development packages.
+If you want to install KCachegrind in a system wide manner, get the global
+installation directory of KDE by running
+
+  kde-config --prefix
+
+Unpack the KCachegrind sources into a directory and install KCachegrind by running (supposing /opt/kde3 as your global KDE installation directory)
+
+  ./configure --prefix=/opt/kde3
+  make
+  make install (as "root" if needed)
+
+If you don't specify a prefix to "configure", KCachegrind will be installed into /usr/local/kde. If you don't have root permission, choose e.g. $HOME/kde as prefix. In this case, you have to set KDEDIR=$HOME/kde additionally. Put $HOME/kde/bin into your path, too.
+
+Simple running "kcachegrind" should open an toplevel window with no trace loaded. 
+
+$title    = Installation
+$location = [[Home]] / [[Download]] / Installation

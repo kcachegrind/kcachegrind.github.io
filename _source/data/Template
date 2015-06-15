@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>{{$title|KCachegrind}}</title>
+</head>
+<body marginwidth=0 marginheight=0 topmargin=0 leftmargin=0 rightmargin=0>
+{{$header}}
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td>[[top900x160l.png]]</td>
+<td width=100% style="background-image:url('[[top900x160m.png|raw]]')">&nbsp;</td>
+<td>[[top900x160r.png]]</td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('[[bshadow.png|raw]]');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> {{$location|[[Home]]}} </i>
+</td></tr></table>
+
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+{{Menu}}
+
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+
+<br><br><br>
+[[KcgLogoGrey.png|center]]
+
+</td>
+<td valign=top>[[vline.png]]</td>
+</td><td valign=top width=100%>
+{{This}}
+</td></tr></table>
+</div>
+{{$footer}}
+</body>
+</html>

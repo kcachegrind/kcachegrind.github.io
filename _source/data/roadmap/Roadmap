@@ -1,0 +1,22 @@
+= General Roadmap
+
+* for [[TodoCallgrind Callgrind]]
+* for [[TodoKCG KCachegrind]]
+
+For an 1.0 release, the following items have to work:
+
+* Comparision mode
+* Profile Selection + Profile Tool Control
+* Integration: DCOP interface (drag and drop?)
++
+Timeline: Mid-2004 (KDE 3.3)
+
+Planned for 1.1:
+* Plugin Interfaces for Profile Tools and Visualizations (Encourage contributions)
+* More flexible internal data model (concrete model to be defined by plugin)
+* Visualizations for Data Relation of events
++
+Timeline: 2005 (KDE 4?)
+
+$title    = Roadmap
+$location = [[Home]] / RoadMap

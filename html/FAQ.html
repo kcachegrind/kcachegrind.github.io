@@ -1,0 +1,78 @@
+<head>
+<title>Frequently Asked Questions</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Documentation.html">Documentation</a> / FAQ </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> 1. Profiling</h2>
+<h3> 1.1 What is the difference between 'Incl.' and 'Self'?</h3>
+<p>
+These are cost attributes for functions regarding some event type.
+As functions can call each other, it makes sense to distinguish the
+cost of the function itself ('Self Cost') and the cost including all called functions ('Inclusive Cost').
+'Self' is sometimes also referred to as 'Exclusive' costs.
+<p>
+So e.g. for main(), you will always have a inclusive cost of almost 100%, whereas the self cost is neglectable when the real work is done in another function.
+<p>
+<h2> 2. User Interface</h2>
+<h3> 2.1 The toolbar/menubar of my KCachegrind looks so spartanic. Is this normal? </h3>
+<p>
+Obviously KCachegrind is wrongly installed on your system. It is recommand to compile it with the installation prefix to be your system wide KDE base directory like 
+<p>
+<br>&nbsp;/configure --prefix=/opt/kde3; make install<p>
+for Suse 8.0/8.1. If you choose another directory like $HOME/kde, you should set the environment variable KDEDIR to this directory before running KCachegrind. 
+<p>
+<h3> 2.2 What's the blue splitted bar icon to the left of the cost values in the Flat Profile? </h3>
+<p>
+That's a graphical version of the cost in percent. The upper bar of the icon fills up from 0 to 50%, the lower from 50% to 100%. This is done to be able to quickly see cost changes in detail without wasting too much space for the graphic.
+<i>This will change in newer versions, as it is quite confusing.</i>
+<p>
+<h3> 2.3 I just installed KCachegrind 0.4.x to get the new Call Graph View.</h3>
+But I do not see any arrows among the function rectangles in this view. What's wrong?
+<p>
+You seem to have Suse 8.1 with the GraphViz package 1.8.6 installed. This contains
+a buggy 'dot', responsible for arrows not showing up. Update to a newer version of
+the GraphViz package.
+<p>
+<h3> 2.4 If I doubleclick on a function down in the Call Graph View, it shows for the function main the same cost as the selected function. Isn't this supposed to be constant 100% ?</h3>
+<p>
+You have activated a function below main() with cost less than main().
+For any function, only that part of the full cost of the function is shown, that is spent while
+the activated function is running. I.e. cost shown for any function can never be higher
+than the cost of the activated function.
+<p>
+</td></tr></table>
+</div>
+</body>

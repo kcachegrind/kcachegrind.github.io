@@ -1,0 +1,60 @@
+<head>
+<title>Data Model for Profile Data</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Documentation.html">Documentation</a> / Data Model </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> The basic Data Model for Profile Data</h2>
+<h3> Cost Entities</h3>
+<p>
+Cost counts of event types (like <i>L2 Misses</i>) are attributed to cost entities, which are items with relationship to source code or data structures of a given program.
+Cost entities not only can be simple code or data positions, but also
+position tupels. E.g., a call has a source and a target, or a data address can have a data type and an code position where its allocation has happened.
+<p>
+The cost entities known to KCachegrind are listed
+<a href="GUICostEntities.html">here</a>.
+<p>
+<h3> Event Types</h3>
+<p>
+Arbitrary event types can be specified in the profile data by
+giving them a name. Their cost related to a cost entity is a 64-bit integer.
+<p>
+Event types whose costs are specified in a profile data file are called
+<i>real</i> events. Additionally, one can specify formulas for event types
+calculated from real events, which are called <i>inherited</i> events.
+<p>
+</td></tr></table>
+</div>
+</body>

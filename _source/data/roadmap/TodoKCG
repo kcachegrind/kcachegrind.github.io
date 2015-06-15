@@ -1,0 +1,11 @@
+= Todo for KCachegrind
+
+* Comparision Mode
+* Region Visualization
+* Call Context Interpretation
+* More complex inherited event types
+* Better handling of long symbols
+* Overview column on annotation view for all lines
+
+$title    = RoadMap KCachegrind
+$location = [[Home]] / [[Roadmap]] / KCachegrind

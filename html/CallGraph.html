@@ -1,0 +1,58 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<a href="ShotCG.html"><img border=0 align=right src="/images/KcgShotCGSmall.gif"></a>
+<p>
+<h2> The Call Graph View</h2>
+The call graph view shows a graph built up around the currently selected function, which is the node centered on the grey-blended pyramid in the background. Each node represents a function, and each edge represents calls.
+<p>
+Cost shown per function is the cost spent while that function and the selected function are running. I.e. suppose a function C called both from A and B; in the call-graph of A, cost of node C only gives the cost when called from A, not any cost while called from B. 
+<p>
+Doubleclicking on a node selects this function. This is the best way for fast
+browsing the call graph of your application. 
+<p>
+The graph is limited by various configurable options. Default values are:
+<ul>
+<li>the minimum cost for both nodes and edges to be shown is 5 % of the selected function
+<li>the maximum caller distance to selected function is 2
+<li>the maximum callee distance to selected function is unlimited
+</ul>
+<p>
+</td></tr></table>
+</div>
+</body>

@@ -1,0 +1,50 @@
+== When to profile your application?
+
+Do not start too early trying to optimize the performance of your program. First, the program has to be correct, all features that should go into the next release have to be implemented, and the program should be as free of bugs as possible. 
+
+Don't even think about profiling before these goals are reached. It does not make sense to optimize something you throw away the next day. 
+
+
+== Is there a function where all the time is spent in?
+
+Start KCachegrind. In the Function Profile, click on header of column "Self". You get a sorted list of costs for functions, with the function with the highest cost at top.
+
+See at the "Calls" column. How many times was this function called? If only a few times, look at the Source Annotation View to locate the problematic lines. 
+
+You can also go to the Call Map View: Look for empty rectangles with a large area. Empty means: no further functions called inside. If there are only "pyramides", your program goes very much down the stack. Click on a rectangle to select the corresponding function to "zoom" into the call graph. 
+
+
+== Is there a function where all the time is spent in because it was called many many times?
+
+If the function was many times called, you have to go up the call stack: See at the Coverage Tab: The upper list shows ALL functions which called the selected once. The Distance column shows the minimal number of stack frames between the selected one and that at the list row, over all calls made. Usually, functions with same distance where called side by side (and were not calling each other). 
+
+Usually there are some functions at top using almost all the time (100% - 70%). But then often there's a gap: The next function below has e.g. only 20% cost. This means that the function above is the one responsible for all the calls to the original selected function. Most probably it has a big loop. Also, look at the call count to get to the function(s) with the big loops. 
+
+
+== Is there a time interval in the program where a function takes all/too much time?
+
+Here, trace parts come into play to distinguish program startup or special actions in the program run, taking much time. Browse into your application now! But always remember: 
+
+= Don't try to overoptimize the program! 
+
+When all functions take almost equal time and the program feels fast for you: Stop! There is no reason to make the program 1% faster with one days optimizations. Better stay with the first optimization which made the program 50% faster in a one-minute job. 
+
+
+Sometimes algorithms need some time; you can't change it or you have to choose another algorithms or introduce heuristics. One final note: The program will always change while it's being developed, so you could loose your optimisations really quick again. 
+
+
+
+= Further Help...
+
+ 
+
+Very useful are the tips reachable under Help/Tip of the day. They should give you a quick introduction and cover some FAQs. 
+
+
+Some help for different parts of the KCachegrind window can be get with Shift-F1. Further documentation can be found in the online help. 
+
+
+Happy profiling! 
+
+$title    = Profiling Tips
+$location = [[Home]] / [[Documentation]] / Tips

@@ -1,0 +1,50 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Screenshot 1</h2>
+After starting up KCachegrind and loading a set of trace parts, the function "main" is automatically selected. 
+<p>
+<a href="Shot1Large.html"><div align=center><img border=0 src="/images/KcgShot1.png"></div></a>
+<p>
+As you can see in the "Trace Part Overview" Dock, we have 8 trace parts here. The "Flat Profile" shows the list of functions available, sorted with highest cumulative cost on top. The Info Tab of the main window shows the cost of the selected function: In the first list, separated by cost type; the current cost type is "Cycle Estimation", as shown in the combobox on the toolbar. This is the default cost type and an estimation of the runtime in CPU cycles. The second list shows the costs (of current cost type), spent in the different trace parts. You can see function main starting in part 1, and being active till program termination. 
+<p>
+Each function gets its own color in the visualization graphs: e.g. function "main", currently selected, has color cyan. The whole program run is, of course, covered this function. Looking at the "Trace Part Overview" again, you see all parts with a cyan frame. Inside are the direct calls of "main" shown, in there own colors. Thus, you see the function coverage over run time easily at one sight. Because no part is selected, the costs shown in the "Flat Profile" are costs summed over all trace parts. Be selecting one part in the "Trace Part Overview", you would see the cost spent in this part only. 
+<p>
+</td></tr></table>
+</div>
+</body>

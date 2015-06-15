@@ -1,0 +1,78 @@
+= Cost Entities known to KCachegrind
+
+Simple Positions:
+
+* Instruction<br>
+An assembler instruction at a specified address.
+
+* Source Line of a Function<br>
+All instructions that the compiler (via debug information) maps to a given source line specified by source file name and line number, and which are
+executed in the context of some function. The latter is needed because
+a source line inside of an inlined function can appear in the context of multiple functions. Instructions without any mapping to an actual
+source line are mapped to line number 0 in file "???".
+
+* Adress Range, Source Range<br>
+Either all instructions mapping into a range of addresses, or all source
+lines in a given range of source line numbers.
+
+* Function<br>
+All source lines of a given function make up the function itself.
+A function is specified by its name and its location in some binary object
+if available. The latter is needed because binary objects of a single
+program each can hold functions with the same name (these can be accessed
+e.g. with dlopen/dlsym; the runtime linker resolves functions in a given
+search order of binary objects used).
+If a profiling tool can not detect the symbol name of a function, e.g. because debug information is not available, either the address of the first executed instruction typically is used, or "???".
+
+* Binary Object<br>
+All functions whose code is inside the range of a given binary object, either
+the main executable or a shared library.
+
+* Source File<br>
+All functions whose first instruction is mapped to a line of the
+given source file.
+
+* Class<br>
+Symbol names of functions typically are hierarchically ordered in name spaces,
+e.g. C++ namespaces, or classes of object oriented languages. Thus, a class
+can hold functions of the class or embedded classes itself.
+
+* Profile Part<br>
+Some time section of a profile run, with a given thread ID, process ID,
+(host machine?), and command line executed. We could distinguish
+Thread Profiles, or full profile runs, but these are all looked at the
+some kind of entity for easier and more flexible use of KCachegrind.
+
+As seen from the list, a set of cost entities often defines another cost entity. Thus, there is a inclusion
+hierarchy of cost entities which should be obvious from the description above.
+
+Position tuples:
+
+* Call from instruction address to target function
+* Call from source line to target function
+* Call from source function to target function
+* (Un)conditional Jump from source to target instruction
+* (Un)conditional Jump from source to target line
++
+Jumps between functions are not allowed, as this makes no sense in a
+call graph. Thus, constructs like exception handling and long jumps in C
+have to be translated to popping the call stack as needed.
+
+
+== Future Additions
+
+Cost Entities:
+
+* Data Access Range<br>
+The address range of a given data access (read/write) in a execution run,
+given as lowest address of the touched memory range, and the size in number
+of bytes.
+
+* Data Type Access Range<br>
+The offset range into a given data type used in the program. Mapping from
+an actual data address into data type offset is typically done using
+debug information from the compiler.
+
+* Data Type<br>
+As data types can recursively include data types themself (e.g. C++ class record, aggregation, or inheritance relation, or C union or record), a data
+type can contain access ranges or data types itself.

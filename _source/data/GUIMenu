@@ -1,0 +1,65 @@
+= Menu and Toolbar Actions
+
+If the standard toolbar includes a menu item in the following list, this
+is noted. The only action which is not available via menu is the search
+entry field (see below).
+
+== File Menu
+
+* New
++
+Opens an empty toplevel window where you can load profile data into.
+This action is not really needed, as File/Open will give you a new
+toplevel window when the current one shows already some data.
+
+* Open
++
+Pops up the ''File Open'' Dialog to choose a profile data file to be loaded.
+If there is some data already shown in the current toplevel window, this
+will open a new window. If you want to open additional profile data into the current window, use File/Add.
++
+The name of profile data files usually ends in .<pid>.<partno>-<threadno>,
+where <partno> and <threadno> are optional and are used for multiple profile data files belonging to one application run. By loading a file ending only in .<pid>, eventually existing data files for this run, but with additional endings, are loaded too.
++
+Example: If there exist profile data files cachegrind.out.123 and cachegrind.out.123.1, by loading the first, the second will be automatically loaded too.
++
+Also available in the standard toolbar.
+
+* Add
++
+Adds a profile data file to the current window. By this, you can force multiple data files to be loaded into the same toplevel window even if they are not from the same run as given by the profile data file naming convention.
+E.g. use it for nearside comparison.
+
+* Reload
++
+Reload the profile data. This is most interesting after another profile data file was generated for an already loaded application run.
++
+Also available in the standard toolbar.
+
+* Force Dump<br>
+
+See ''What's-This''-Help for the action.
+
+== View Menu
+
+* Primary Event Type
+* Secondary Event Type
+* Grouping
+* Layout
+* Split
+* Show relative Costs
+* Percentage relative to Parent
+* Do Cycle Detection
+
+== Go Menu
+
+* Up
+* Back
+* Forward
+
+Items of the Settings and Help menu should be obvious.
+
+== Search Toolbar Field
+
+Search for functions by entering part of the symbol name. The search
+is case-insensitive.

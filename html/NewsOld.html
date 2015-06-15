@@ -1,0 +1,253 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> 28.5.03</h2>
+Calltree Skin V 0.9.1
+Bug fix release. 
+<ul>
+<li>Fixed a packaging mistake. I should have used "make distcheck" earlier ;-) 
+<li>Runs with Valgrind V 1.9.6. Because of a skin API change, calltree previously did compile with V 1.9.6, but didn't run. 
+<li>Fixed failed assertion with --trace-jump=yes: Jumps can happen between different functions with long_jmp/C++ exceptions. 
+</ul>
+<p>
+<h2> 24.5.03</h2>
+Calltree Skin V 0.9.0
+<ul>
+<li>Compiles both with Valgrind 1.9.6 and current Valgrind CVS. 
+<li>Compile fixes for GCC 3.3. 
+<li>Added option --dump-instr=yes to include trace information on instruction level. This needs a new version of KCachegrind to be useful. Stay tuned! 
+<li>Added option --trace-jump=yes to include trace information for (conditional) jumps inside of a function. 
+</ul>
+<p>
+<h2> 16.4.03</h2>
+Calltree Skin V 0.2.95.
+<ul>
+<li>Fixed a dumb configure error of 0.2.94. Added some HTML documation. 
+</ul>
+<p>
+<h2> 15.4.03</h2>
+Calltree Skin V 0.2.94.
+<ul>
+<li>Some speedups and small bug fixes. Compiles with V 1.9.5. 
+</ul>
+<p>
+<h2> 5.4.03</h2>
+KCachegrind 0.3b
+<ul>
+<li>Real cost types are drawn in different colors in the graphic cost bars now. This is especially useful to see the partitioning of real costs in a virtual type. 
+<li>Cost type bars are shown in the treemaps. 
+<li>The flat profile shows call counts now. This allows for call count order. 
+<li>Cycle detection is switchable with a toolbar button. For GUI application, sometimes it's useful to switch cycle detection off, even if there are some visualization errors with recursive calls. 
+<li>New toolbar button to show "expanded" percentage costs. If this switch is off, all costs are shown relative to the total application cost (in call lists/source view). If switched on, the costs are relative to the function cost, thus "expanded". 
+<li>The treemap now shows a black hash pattern on areas where sub items are to small to draw. 
+Lot of optimisations allover. 
+</ul>
+<p>
+Calltree Skin 0.2.93 for Valgrind 1.9.4 
+<ul>
+<li>Reordered event type order for better visualisation with KCachegrind 0.3b
+<li>Small bug fixes
+</ul>
+<p>
+<h2> 2.4.03</h2>
+Calltree Skin 0.2.92 for Valgrind 1.9.4
+<ul>
+<li>All bugs with multithreaded apps should be fixed now. Missing for version 0.99: Regression tests, docu, and performance :-) 
+</ul>
+<p>
+<h2> 31.3.03</h2>
+Calltree Skin 0.2.91 for Valgrind 1.9.4
+<ul>
+<li>Bugs with --fn-skip=xxx are fixed. For multithreaded apps, it only works with --dump-threads=yes for now. 
+</ul>
+<p>
+<h2> 17.3.03</h2>
+Calltree Skin 0.2.90 for Valgrind 1.9.4
+<ul>
+<li>This is the 2nd prerelease for the calltree rewrite. Warning: Bugs with multithreaded apps still not fixed! A lot of new command line options, and UserRequests. 
+</ul>
+<p>
+<h2> 27.2.03</h2>
+Calltree Skin 0.2d for Valgrind 1.9.x
+<ul>
+<li>Bug fix: Use 64 bit for cycle cost 
+</ul>
+<p>
+Calltree Skin 0.3pre for Valgrind 1.9.x
+<ul>
+<li>This is a prerelease of a rewritten calltree skin. Warning: Multithreading is buggy! 
+</ul>
+<p>
+<h2> 6.2.03</h2>
+KCachegrind 0.3a
+<ul>
+<li>This is a bugfix release. It's compiling both with KDE 3.0.x and KDE 3.1.x libraries. 
+<li>Compile fixes for KDE 3.0.x. Tested. 
+<li>Fix for loading of traces from other directories. 
+<li>Fix to always select a trace type. 
+</ul>
+<p>
+<h2> 27.1.03</h2>
+Calltree Skin 0.2c for Valgrind 1.9.x
+<ul>
+<li>A simple port of 0.2b to a independent skin (plugin) for Valgrind 1.9.x. 
+<li>No patching of valgrind sources required; a binary Valgrind installation is enough. 
+</ul>
+<p>
+<h2> 29.11.02</h2>
+KCachegrind 0.3
+<ul>
+<li>Compiles with KDE 3.0.5. 
+<li>Recursive handling corrected: Cycle detection and handling. 
+<li>Internal cleanup: Cost types aren't hardcoded any more (config missing) 
+<li>Treemap widget: New Split Types (Recursive bisection, Columns, Rows) for more rectangular areas when there are many subitems. 
+</ul>
+<p>
+<h2> 15.10.02</h2>
+Calltree Patch 0.2b for Valgrind 1.0.4
+<ul>
+<li>Adjustments for Valgrind 1.0.4. Note: Valgrind 1.0.4 has a serious bugfix for debug info generated with GCC 3.x. This bugfix is very important the see the real function names in KCachegrind instead of 0x80xxxxxx. 
+<li>No compile warnings with GCC 3.x any more 
+<li>Now the "trigger:" line has the exact reason for a trace dump 
+</ul>
+<p>
+<h2> 24.9.02</h2>
+KCachegrind 0.2a
+<ul>
+<li>Compile fix for GCC 3.x and KDE 3.0.x 
+<li>Optional TreeMap shading added (for even nicer screenshots!) 
+<li>Minor GUI string fixes 
+</ul>
+<p>
+<h2> 23.9.02</h2>
+KCachegrind 0.2
+<ul>
+<li>Terminology similar to GProf. 
+<li>Lot of What's this help added for all widgets in KCachegrind. 
+<li>Added to Info tab: 'List of loaded parts' with function info per trace part. This also allows hiding parts to get e.g. only Thread1 profile parts for a multithreaded application. 
+Graph rectangles are now optionally titled by name and cost, if available space allows this (see Screenshots!) 
+<li>Many visualisation options added for the TreeMap widget, all available by a context menu. Most important: A mode to get real cost size proportions ('Skip incorrect border')! 
+<li>Much improved automatic saving/loading of configuration and current program state options. Most options are stored on a profiled-command-basis. Quitting KCachegrind and starting it again with a trace of the same profiled program, gives you the same window layout and preselected funtion/group. 
+<li>Toolbar buttons for Reload Trace/Force Cachegrind Dump added for some interactive control of a running profile from the GUI. 
+<li>More distance information in the Coverage Tab. 
+<li>And much more... 
+</ul>
+<p>
+<h2> 14.9.02</h2>
+Calltree Patch 0.2a for Valgrind 1.0.2
+<ul>
+<li>Improved multi-thread support. There's much less slowdown for single threaded programs while allowing multi-threading. 
+<li>Option "--dump-threads=no|yes" added. Allows separate trace file generation per thread in multi-threaded programs. Default is one trace file for costs of all threads. 
+<li>Added documentation in README.calltree: All about usage, additional options, trace format extension, changelog, some benchmark results, and technical details on the patch. 
+</ul>
+<p>
+<h2> 11.9.02</h2>
+KCachegrind 0.1d, Changes:
+<ul>
+<li>Update fix for Source 
+<li>New config option: L1/L2 factor for CPU cycle estimation 
+<li>New config option: Drawing Mode for Graphs 
+<li>Able to load thread trace parts (produced by Calltree Patch 0.2 with multithreaded programs). 
+</ul>
+<p>
+Calltree Patch 0.2 for Valgrind 1.0.2
+<ul>
+<li>Version 0.2 supports multi-threaded programs now. Unfortunately there's some overhead (10%) even for single-threaded programs at the moment, and the version is possible not very stable. So use 0.1e if you don't need it. For thread traces, the filename has appended "-tid" for costs in thread tid. 
+</ul>
+<p>
+<h2> 10.9.02</h2>
+Calltree Patch 0.1e for Valgrind 1.0.2
+<ul>
+<li>Bugfix for Segfault with indirect jumps in client code 
+<li>Bugfix for correct dumping of inlined functions 
+</ul>
+<p>
+<h2> 9.9.02</h2>
+Calltree Patch 0.1d for Valgrind 1.0.2
+<ul>
+<li>Option --calltree=no to disable call-tracing. Needed to disable call-tree tracing for multithreaded programs, as that's not working at the moment. You get the original cachegrind behaviour (aside from compressed output). 
+<li>Option --compress-strings=no to disable string compression in trace dumps. This produces more human readable trace output. 
+<li>Atomic generation of trace part files. This is done by dumping to ".file" and renaming to "file" afterwards. 
+</ul>
+<p>
+<h2> 6.9.02</h2>
+KCachegrind 0.1c, Changes:
+<ul>
+<li>Should finally compile with KDE 3.0.x 
+<li>Some Docu fix (at least no more errors) 
+</ul>
+<p>
+Calltree Patch 0.1c for Valgrind 1.0.1
+<ul>
+<li>Failed assertions fixed (unmapping/CC type check) 
+<li>vg_annotate can now load the traces 
+</ul>
+<p>
+<h2> 4.9.02</h2>
+KCachegrind 0.1b, Changes:
+<ul>
+<li>New calculated event type: CPU Cycle Estimation, selected on startup. 
+<li>Distance column in Coverage lists: shows minimal stack frame distance to selected function. 
+<li>Should compile with GCC 3.x now 
+<li>Should compile with KDE 3.0.x now (Ships KWidgetAction) 
+<li>Small GUI fixes 
+<li>Searches recursively for source files now 
+<li>Some usefull tips of the day added 
+<li>German message translation 
+<li>Reads trace files produced by original Cachegrind and Cachgrind with Calltree patch 0.1b (No previous Calltree patches supported !). 
+</ul>
+<p>
+Calltree Patch 0.1b for Valgrind 1.0.1
+<ul>
+<li>Hopefully no malformed patch... 
+<li>Option --cachedumps= renamed to --dumps= 
+<li>Option --dumpat=function added to dump at function entry 
+<li>Immediate dump forcable with "touch cachegrind.cmd" in cwd of a running cachegrind (the program must be running, not sleep!) 
+<li>Creates traces with names 'cachegrind.out.pid.part' 
+<li>Writes compressed traces (70% smaller than original cachegrind) 
+</ul>
+<p>
+<h2> 30.8.02</h2>
+Small fixes for braindead errors of first publication.
+<p>
+<h2> 28.8.02</h2>
+Initial unofficial publication of KCachegrind under GPL.
+<p>
+</td></tr></table>
+</div>
+</body>

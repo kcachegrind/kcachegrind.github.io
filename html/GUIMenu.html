@@ -1,0 +1,120 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Menu and Toolbar Actions</h2>
+If the standard toolbar includes a menu item in the following list, this
+is noted. The only action which is not available via menu is the search
+entry field (see below).
+<p>
+<h3> File Menu</h3>
+<p>
+<ul>
+<li>New
+<p>
+Opens an empty toplevel window where you can load profile data into.
+This action is not really needed, as File/Open will give you a new
+toplevel window when the current one shows already some data.
+</ul>
+<p>
+<ul>
+<li>Open
+<p>
+Pops up the <i>File Open</i> Dialog to choose a profile data file to be loaded.
+If there is some data already shown in the current toplevel window, this
+will open a new window. If you want to open additional profile data into the current window, use File/Add.
+<p>
+The name of profile data files usually ends in .<pid>.<partno>-<threadno>,
+where <partno> and <threadno> are optional and are used for multiple profile data files belonging to one application run. By loading a file ending only in .<pid>, eventually existing data files for this run, but with additional endings, are loaded too.
+<p>
+Example: If there exist profile data files cachegrind.out.123 and cachegrind.out.123.1, by loading the first, the second will be automatically loaded too.
+<p>
+Also available in the standard toolbar.
+</ul>
+<p>
+<ul>
+<li>Add
+<p>
+Adds a profile data file to the current window. By this, you can force multiple data files to be loaded into the same toplevel window even if they are not from the same run as given by the profile data file naming convention.
+E.g. use it for nearside comparison.
+</ul>
+<p>
+<ul>
+<li>Reload
+<p>
+Reload the profile data. This is most interesting after another profile data file was generated for an already loaded application run.
+<p>
+Also available in the standard toolbar.
+</ul>
+<p>
+<ul>
+<li>Force Dump<br>
+</ul>
+<p>
+See <i>What's-This</i>-Help for the action.
+<p>
+<h3> View Menu</h3>
+<p>
+<ul>
+<li>Primary Event Type
+<li>Secondary Event Type
+<li>Grouping
+<li>Layout
+<li>Split
+<li>Show relative Costs
+<li>Percentage relative to Parent
+<li>Do Cycle Detection
+</ul>
+<p>
+<h3> Go Menu</h3>
+<p>
+<ul>
+<li>Up
+<li>Back
+<li>Forward
+</ul>
+<p>
+Items of the Settings and Help menu should be obvious.
+<p>
+<h3> Search Toolbar Field</h3>
+<p>
+Search for functions by entering part of the symbol name. The search
+is case-insensitive.
+<p>
+</td></tr></table>
+</div>
+</body>

@@ -1,0 +1,80 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+The terms in the glossary are sorted in two ways: according to
+categories, and alphabetically (see below). Most of the terms defined
+here are only valid in the scope of KCachegrind (other visualization tools could use other terms).
+<p>
+<h2> Sorted according Category</h2>
+<h3> Profiling Terms</h3>
+<p>
+<ul>
+<li>Profiling: The process of collecting statistical information about runtime
+characteristics of program runs.
+<li>Tracing: The process of supervising a program run and storing events happening sorted by a timestap in a output file, the Trace.
+<li>Trace: A sequence of timestamped events that occured while tracing a program run. Its size is typically linear to the execution time of the program run.
+<li>Profile Data File: A file containing data measured in a profile experiment (or part of) or produced by postprocessing a trace. Its size is typically linear to the code size of the program.
+<li>Profile Data Part (incorrectly used also: Trace Part): Data from a
+profile data file.
+<li>Profile Experiment: A program run supervised by a profiling tool, producing possibly multiple profile data files from parts and/or threads of the run.
+<li>Profile Project: A configuration for profile experiments used for one program which has to be profiled, perhaps in multiple versions. Comparations of profile data typically only makes sense between profile data produced in experiments of one profile project.
+<li>Cost Entity: An abstract item related to source code to which event counts can be attributed. Dimensions for cost entities are code location (e.g. source line, function), data location (e.g. accessed data type, data object), execution location (e.g. thread, process), and tupels or tripels of forementioned positions (e.g. calls, object access from statement, evicted data from cache).
+<li>Event Type: The kind of event of which costs can be attributed to a cost entity. There exist real event types and inherited event types.
+<li>Real Event Type: A event type that can be measured by a tool. This needs the existance of a sensor for the given event type.
+<li>Inherited Event Type: A virtual event type only visible in the visualization which is defined by a formula to be calculated from real event types.
+<li>Event Costs: Sum of events of some event type occuring while the execution is related to some cost entity. The cost is attributed to the entity.
+</ul>
+<p>
+<h3> Visualization Views</h3>
+<p>
+<h3> Configuration</h3>
+<p>
+<h3> Data Model</h3>
+<p>
+<hr>
+<p>
+<h2> Alphabetically</h2>
+<h3> E</h3>
+<p>
+<h3> I</h3>
+<p>
+<h3> S</h3>
+<p>
+</td></tr></table>
+</div>
+</body>

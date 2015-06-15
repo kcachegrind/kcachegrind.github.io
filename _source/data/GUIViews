@@ -1,0 +1,109 @@
+= Event Types
+
+This list shows all cost types available
+and the corresponding self and inclusive cost of the
+current active function for that event type.
+
+By choosing an event type from the list,
+you change the type of costs shown 
+all over KCachegrind to be the selected one.
+
+= Call Lists
+
+These lists show calls to/from the current active function.
+With ''all' callers/callees functions are meant which can
+be reached in caller/callee direction, even when other functions are
+inbetween.
+
+Call list views include:
+* Direct Callers
+* Direct Callees
+* All Callers
+* All Callees
+
+
+= Maps
+
+A treemap visualization of the primary event type, up or down the
+call hierarchy. Each colored rectangle represents a function;
+its size tries to be proportional to the cost spent
+therein while the active function is running
+(however, there are drawing constrains).
+
+For the Caller Map, the graph shows the nested hierarchy of
+all callers of the current activated function; for the
+Callee Map, it shows the nested hierarchy of
+all callees of the current activated function.
+
+Appearance options can be found in the
+in the context menu. To get exact size proportions,
+choose 'Hide incorrect borders'. As this mode can be
+''very'' time consuming, you may want to limit
+the maximum drawn nesting level before.
+'Best' determinates the split direction for children
+from the aspect ratio of the parent.
+'Always Best' decides on remaining space for each sibling.
+'Ignore Proportions' takes space for function name
+drawing ''before'' drawing children. Note that
+size proportions can get ''heavily'' wrong.
+
+Keyboard navigation is available with the left/right arrow
+keys for traversing siblings, and up/down arrow keys
+to go a nesting level up/down.
+'Return' activates the current item.
+
+= Call Graph
+
+This view shows the call graph around the active function.
+
+The shown cost is <b>only</b> the cost which is
+spent while the active function was actually running;
+i.e. the cost shown for main() - if it's visible - should
+be the same as the cost of the active function, as that is
+the part of inclusive cost of main() spent while the active
+function was running.
+
+For cycles, blue call arrows indicate that this is an
+artificial call added for correct drawing which
+actually never happened.
+
+If the graph is larger than the widget area, an overview
+panner is shown in one edge.
+There are similar visualization options as for the
+Call Treemap; the selected function is highlighted.
+
+= Annotations
+
+== Source Annotation
+
+The annotated source list shows the
+source lines of the current active function
+together with (self) cost spent while executing the
+code of a source line. If there was a call
+from a source line, lines with details on the
+call are inserted into the source: the
+(inclusive) cost spent inside of the call,
+the number of calls happening, and the call destination.
+
+Select such a call information line to activate the
+call destination.
+
+== Assembler Annotation
+
+The annotated assembler list shows the
+machine code instructions of the current selected
+function together with (self) cost spent while
+executing an instruction. If this is a ''CALL''
+instruction, lines with details on the
+call are inserted into the source:
+the (inclusive) cost spent inside of the call,
+the number of calls happening, and the call destination.
+
+The disassembler output shown is generated with
+the 'objdump' utility from the 'binutils' package.
+
+Select such a call information line to activate the
+call destination.
+
+$title    = Visualizations
+$location = [[Home]] / [[Documentation]] / Visualizations

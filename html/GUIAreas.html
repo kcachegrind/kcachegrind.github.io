@@ -1,0 +1,99 @@
+<head>
+<title>GUI Components</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Documentation.html">Documentation</a> / GUI Components </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Dockables</h2>
+Dockables are sidewindows which can be placed at any border of an KCachegrind window. They always contain a list of cost entities sorted in some manner.
+<p>
+<ul>
+<li>Function Profile<br>
+The Function Profile is a list of functions showing inclusive and exlusive
+cost, call count, name and position of functions.
+</ul>
+<p>
+<ul>
+<li>Parts Overview
+<li>Call Stack
+</ul>
+<p>
+<h2> Visualization Area</h2>
+The visualization area, typically the right part of a KCachegrind main window,
+is made up of one (default)
+or more <i>Tab Views</i>, either lined up horizontally
+or vertically. Each tab view holds different visualization views
+of only one cost entity at a time.
+The name of this entity is given at the top of the tab view.
+If there are multiple tab views, only one is active. The entity name
+in the active tab view is shown in bold and determines the active cost
+entity of the KCachegrind window.
+<p>
+<h3> Areas of a Tab View</h3>
+<p>
+Each tab view can hold up to four view areas, namely Top, Right, Left, Bottom.
+Each area can hold multiple stacked visualization views. The visible view of an area is selected by a tab bar. Tab bars of the top and right area are at the top, tab bars of the left and bottom area are at the bottom. You can specify which kind of visualization should go into which area by using the context menu of the tabs.
+<p>
+<h3> Synchronized Visualization via Selected Entity in a Tab View</h3>
+<p>
+Besides an active entity, each tab view has an selected entity.
+As most visualization types show multiple entities with the active one
+somehow centered, you change the selected item by navigating inside
+of an visualization (by clicking with the mouse or using the keyboard).
+Typically, selected items are shown in an highlighted state. By changing
+the selected entity in one of the visualization of a tab view, all other
+visualizations in tab view accordingly highlight the new selected entity.
+<p>
+<h3> Synchronization between Tab Views</h3>
+<p>
+If there are multiple tab views, a selection change in one tab view leads
+to an activation change in the next (to right/to bottom) tab view. This
+kind of linkage e.g. should allow for fast browsing in call graphs.
+<p>
+<h3> Layouts</h3>
+<p>
+The layout of all the tab views of a window can be saved
+(see menu item View/Layout). After duplicating the current layout
+(Ctrl+Plus or menu) and
+changing some sizes or moving a visualization view to another area of an
+tab view, you can quickly switch between the old and the new layout via
+Ctrl+Left/Right. The set of layouts will be stored between KCachegrind
+sessions of the same profiled command.
+You can make the current set of layouts as the default one
+for new KCachegrind sessions, or restore to the default layout set.
+<p>
+</td></tr></table>
+</div>
+</body>

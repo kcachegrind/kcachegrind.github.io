@@ -1,0 +1,27 @@
+= Bugs
+
+If you find bugs or have otherwise any problems,
+please put them in the bug tracker of this SourceForge project
+<a href="http://sourceforge.net/tracker/?atid=507103&group_id=64331&func=browse"> here</a>. If you know a workaround, you can write
+it on a Wiki page (see link on the left).
+
+= Wish Items
+
+If you have wishes for KCachegrind, please give them also a Wiki page.
+I will regularly look up the Wiki pages and insert comments.
+
+You can have a look at things to be integrated into
+[[roadmap/TodoCallgrind Callgrind]] and
+[[roadmap/TodoKCG KCachegrind]] in the near future.
+
+
+== Wishes of myself:
+
+* Support GProf, ... as profiling source 
+* Data structure profiling (e.g. function foo wrote 5234x into data structure bar.value). 
+* More events from cachegrind: TLB misses, page faults... 
+
+<br>
+
+$title    = Bugs and Wishes
+$location = [[Home]] / Bugs and Wishes

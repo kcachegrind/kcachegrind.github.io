@@ -1,0 +1,142 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Cost Entities known to KCachegrind</h2>
+Simple Positions:
+<p>
+<ul>
+<li>Instruction<br>
+An assembler instruction at a specified address.
+</ul>
+<p>
+<ul>
+<li>Source Line of a Function<br>
+All instructions that the compiler (via debug information) maps to a given source line specified by source file name and line number, and which are
+executed in the context of some function. The latter is needed because
+a source line inside of an inlined function can appear in the context of multiple functions. Instructions without any mapping to an actual
+source line are mapped to line number 0 in file "???".
+</ul>
+<p>
+<ul>
+<li>Adress Range, Source Range<br>
+Either all instructions mapping into a range of addresses, or all source
+lines in a given range of source line numbers.
+</ul>
+<p>
+<ul>
+<li>Function<br>
+All source lines of a given function make up the function itself.
+A function is specified by its name and its location in some binary object
+if available. The latter is needed because binary objects of a single
+program each can hold functions with the same name (these can be accessed
+e.g. with dlopen/dlsym; the runtime linker resolves functions in a given
+search order of binary objects used).
+If a profiling tool can not detect the symbol name of a function, e.g. because debug information is not available, either the address of the first executed instruction typically is used, or "???".
+</ul>
+<p>
+<ul>
+<li>Binary Object<br>
+All functions whose code is inside the range of a given binary object, either
+the main executable or a shared library.
+</ul>
+<p>
+<ul>
+<li>Source File<br>
+All functions whose first instruction is mapped to a line of the
+given source file.
+</ul>
+<p>
+<ul>
+<li>Class<br>
+Symbol names of functions typically are hierarchically ordered in name spaces,
+e.g. C++ namespaces, or classes of object oriented languages. Thus, a class
+can hold functions of the class or embedded classes itself.
+</ul>
+<p>
+<ul>
+<li>Profile Part<br>
+Some time section of a profile run, with a given thread ID, process ID,
+(host machine?), and command line executed. We could distinguish
+Thread Profiles, or full profile runs, but these are all looked at the
+some kind of entity for easier and more flexible use of KCachegrind.
+</ul>
+<p>
+As seen from the list, a set of cost entities often defines another cost entity. Thus, there is a inclusion
+hierarchy of cost entities which should be obvious from the description above.
+<p>
+Position tuples:
+<p>
+<ul>
+<li>Call from instruction address to target function
+<li>Call from source line to target function
+<li>Call from source function to target function
+<li>(Un)conditional Jump from source to target instruction
+<li>(Un)conditional Jump from source to target line
+<p>
+Jumps between functions are not allowed, as this makes no sense in a
+call graph. Thus, constructs like exception handling and long jumps in C
+have to be translated to popping the call stack as needed.
+</ul>
+<p>
+<h3> Future Additions</h3>
+<p>
+Cost Entities:
+<p>
+<ul>
+<li>Data Access Range<br>
+The address range of a given data access (read/write) in a execution run,
+given as lowest address of the touched memory range, and the size in number
+of bytes.
+</ul>
+<p>
+<ul>
+<li>Data Type Access Range<br>
+The offset range into a given data type used in the program. Mapping from
+an actual data address into data type offset is typically done using
+debug information from the compiler.
+</ul>
+<p>
+<ul>
+<li>Data Type<br>
+As data types can recursively include data types themself (e.g. C++ class record, aggregation, or inheritance relation, or C union or record), a data
+type can contain access ranges or data types itself.
+</ul>
+<p>
+</td></tr></table>
+</div>
+</body>

@@ -1,0 +1,62 @@
+= News
+
+== 28.4.04
+
+KCachegrind 0.4.5.
+Minor Release. Changes to 0.4.4 and from version in KDE 3.2.x:
+
+** Converter scripts for OProfile, PERL, and PHP
+** Switching between multiple visualization layouts
+** Call graph can be exported as Image (PNG)
+** Simultaneous display of 2 event types in Call and Annotation Views
+** Terminology corrections, bug fixes ...
+
+== 13.3.03
+
+Calltree 0.9.7.
+
+== 29.10.03
+
+Calltree 0.9.5.
+Includes the new command line tool ct_control
+for controlling of Calltree processes, ct_annotate is working again, documentation update.
+
+== 26.9.03
+
+KCachegrind 0.4.4 (unstable). 
+
+== 17.9.03
+
+The Python Hotshot Profiler now is supported via format conversion with
+[[ContribPython hotshot2cachegrind]], thanks to Joerg Beyer. 
+
+== 8.9.03
+
+KCachegrind 0.4.3 (unstable).<br>
+See ChangeLog for more details (The WWW structure is not the best, I know).
+
+== 28.8.03
+
+Calltree 0.9.4 (SSE2 memory accesses). KCachegrind 0.4.2 (fix for reload crash). 
+
+== 14.8.03: KCachegrind 0.4.1
+
+This is a bugfix release to also compile with QT3.0/KDE3.0 and run with GraphViz<1.9 (e.g. RedHat 8.0) 
+
+== 30.7.03
+
+Overhaul of the Web-Pages. User-visible, this is a split up of the
+one big page into smaller pages. But most important, internally
+everything is Wiki-based now with a few modifications from the normal
+Wiki concept to allow for looking like handcrafted HTML.
+
+== [[News030729 29.7.03]]
+
+KCachegrind 0.4.0 (unstable pre-release)<br>
+Calltree Skin V 0.9.3 (supports Valgrind-20030725)
+
+== [[News030719 19.7.03]]
+
+Calltree Skin V 0.9.2
+
+== [[NewsOld Older Items...]]

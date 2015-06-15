@@ -1,0 +1,20 @@
+= Related Tools
+
+Remark: This is an arbitrary list of tools, partly from research area. The list
+is not Linux-specific.
+
+== Commercial
+
+* Rational Quantify
+* Intel VTune
+
+== Free
+
+* HPCView
+* MemSpy (Martonosi/Gupta/Anderson)
+* CProf (Lebeck/Wood)
+* VProf 
+* MTools (Goldberg/Hennessy)
+* MHSim (Fowler/Mellor-Crummey/Whalley)
+* SIP (Berg/Hagersten)
+* DCPI (HP Profiling Infrastructure for Alpha Processors)

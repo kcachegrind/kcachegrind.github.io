@@ -1,0 +1,40 @@
+= Python Support: hotshot2cachegrind
+
+This is a script for format conversion from Python's Hot-Shot Profiler into cachegrind
+format, loadable by KCachegrind.
+You find it in the current KCachegrind source package (directory
+converters/).
+
+
+Thanks goes to
+<a href="mailto:j.beyer@web.de">Joerg Beyer</a> for this contribution !
+
+----
+
+For usage, this is an excerpt from the top of the script:
+
+ #!/usr/bin/env python
+ # ...
+ # This script transforms the pstat output of the hotshot
+ # python profiler into the input of kcachegrind.
+ #
+ # example usage:
+ # modify you python script to run this code:
+ #
+ # import hotshot
+ # filename = "pythongrind.prof"
+ # prof = hotshot.Profile(filename, lineevents=1)
+ # prof.runcall(run) # assuming that "run" should be called.
+ # prof.close()
+ #
+ # it will run the "run"-method under profiling and write
+ # the results in a file, called "pythongrind.prof".
+ #
+ # then call this script:
+ #     hotshot2cachegrind -o outputfile inputfile
+ # or here:
+ #     hotshot2cachegrind -o cachegrind.out.0 pythongrind.prof
+ #
+ # then call kcachegrind:
+ #     kcachegrind cachegrind.out.0
+ ...

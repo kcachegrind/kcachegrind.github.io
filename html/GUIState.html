@@ -1,0 +1,64 @@
+<head>
+<title>Visualization State</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Documentation.html">Documentation</a> / Visualization State </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+The Visualisation state of a KCachegrind window includes:
+<ul>
+<li>the primary and secondary event type choosen for display,
+<li>the function grouping
+(used in the Function Profile list and entity coloring),
+<li>the profile parts whose costs are to be included in visualization,
+<li>an active cost entity (e.g. a function selected from the
+function profile dockable),
+<li>a selected cost entity.
+</ul>
+<p>
+This state influences visualizations.
+<p>
+Visualizations always are shown for one, the active, cost entity.
+When a given visualization is not appropriate for a cost entity,
+it is disabled (e.g. when selecting an ELF object in the group list
+by double-clicking, source annotation for an ELF object make no sense).
+<p>
+E.g. for an active function, the callee list shows all the functions called
+from the active one. One can select one of these functions without making
+it active. If the call-graph is shown nearside, it will automatically
+select the same function.
+<p>
+</td></tr></table>
+</div>
+</body>

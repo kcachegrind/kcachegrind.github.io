@@ -1,0 +1,89 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Usage</h2>
+<h3> Example 1</h3>
+<p>
+Suppose you want to profile the startup of Konqueror, splitting the trace into execution parts of 10 000 000 basic blocks. Even if you don't have konqueror compiled with debug info, we get profile data with function symbols. These are always available (at least for every shared library, as runtime linking needs it). In an empty directory, run 
+<p>
+<pre>
+   valgrind --tool=callgrind -v --dump-every-bb=10000000 konqueror
+</pre><p>
+With "-v", you get some output when shared libraries are loaded and when a profile trace dump is made. After the konqueror window pops up, simple close it again. 
+<p>
+Now the files callgrind.out.pid, callgrind.out.pid.2, callgrind.out.pid.2, ... are created. KCachegrind by default loads these files, when found in the current working directory. So it should be enough to run "kcachegrind". When you have profile data files from more runs in one directory, they can still distinguished by the pid. To load the files for the run with process ID pid, start "kcachegrind cachegrind.out.pid". 
+<p>
+<h3> Example 2</h3>
+<p>
+This time, you want to only dump profile data when choosing View/Reload in the Konqueror Menu. Do 
+<p>
+<pre>
+   valgrind --tool=callgrind -v --dump-before=KonqMainWindow::slotReload konqueror
+</pre><p>
+Again, -v shows when dumps are made. Choose View/Reload two times to get profile data (1) before first reload, (2) before second reload, and (3) at program termination. By starting kcachegrind and selecting only the 2nd output file, you see exactly the cost of a reload action. You can already browse a profile data file while the Callgrind profiling is running in the background. When a new profile data file is dumped, choose "File/Reload" to load the new generated data.
+<p>
+<h3> Example 3</h3>
+<p>
+This time, we first start KCachegrind with 'kcachegrind &' in the directory
+where the profile data files will end up in. Then, in the same directory (!),
+we start konqueror for interactive profiling without special options with 
+<p>
+<pre>
+   valgrind --tool=callgrind konqueror
+</pre><p>
+When the Konqueror window is shown, press the 'Force Dump' Toolbar button in
+KCachegrind. Now, when you move the mouse into the Konqueror window, you will
+see Konqueror freezing (no update) for a few seconds. And "magically",
+KCachegrind will load the first profile data file of the current konqueror
+run. For this to work, Callgrind can be controlled from the outside. This is
+also possible with the supplied script callgrind_control. E.g. to trigger
+dumping of any profile data up to now, run
+<p>
+<pre>
+   callgrind_control -d
+</pre><p>
+When you list the contents of the directory, you can check that callgrind made
+a profile data dump. You have to press 'Reload' manually now in KCachegrind to
+get the new data. 
+There is one issue for interactive control of a Callgrind run. Callgrind only
+reacts on commands when it is actively doing something. Thus, for konqueror to
+make "active", we needed to move the mouse into its window.
+<p>
+</td></tr></table>
+</div>
+</body>

@@ -1,0 +1,137 @@
+= 2. Reference
+
+== 2.1 Grammar
+
+A Callgrind profile data file is an expression of
+"ProfileDataFile" in the following grammar
+("+" means "at least once", "?" optional).
+
+ ProfileDataFile := FormatVersion? Creator? PartData*
+
+ FormatVersion := "version:" Space* Number "\n"
+
+ Creator := "creator:" NoNewLineChar* "\n"
+
+ PartData := (HeaderLine "\n")+ (BodyLine "\n")+
+
+ HeaderLine := <i>(empty line)</i>
+  | ('#' NoNewLineChar*)
+  | PartDetail
+  | Description
+  | EventSpecification
+  | CostLineDef
+
+ PartDetail := TargetCommand | TargetID
+
+ TargetCommand := "cmd:" Space* NoNewLineChar*
+
+ TargetID := ("pid"|"thread"|"part") ":" Space* Number
+
+ Description := "desc:" Space* Name Space* ":" NoNewLineChar*
+
+ EventSpecification := "event:" Space* Name InheritedDef? LongNameDef?
+
+ InheritedDef := "=" InheritedExpr
+
+ InheritedExpr := Name
+  | Number Space* ("*" Space*)? Name
+  | InheritedExpr Space* "+" Space* InheritedExpr
+
+ LongNameDef := ":" NoNewLineChar*
+
+ CostLineDef := "events:" Space* Name (Space+ Name)*
+  | "positions:" "instr"? (Space+ "line")?
+
+ BodyLine := <i>(empty line)</i>
+  | ('#' NoNewLineChar*)
+  | CostLine
+  | PositionSpecification
+  | AssoziationSpecification
+
+ CostLine := SubPositionList Costs?
+
+ SubPositionList := (SubPosition+ Space+)+
+
+ SubPosition := Number | "+" Number | "-" Number | "*"
+
+ Costs := (Number Space+)+
+
+ PositionSpecification := Position "=" Space* PositionName
+
+ Position := CostPosition | CalledPosition
+
+ CostPosition := "ob" | "fl" | "fi" | "fe" | "fn"
+
+ CalledPosition := " "cob" | "cfl" | "cfn"
+
+ PositionName := ( "(" Number ")" )? (Space* NoNewLineChar* )?
+
+ AssoziationSpecification := CallSpezification
+  | JumpSpecification
+
+ CallSpecification := CallLine "\n" CostLine
+
+ CallLine := "calls=" Space* Number Space+ SubPositionList
+
+ JumpSpecification := ...
+
+ Space := " " | "\t"
+
+ Number := HexNumber | (Digit)+
+
+ Digit := "0" | ... | "9"
+
+ HexNumber := "0x" (Digit | HexChar)+
+
+ HexChar := "a" | ... | "f" | "A" | ... | "F"
+
+ Name = Alpha (Digit | Alpha)*
+
+ Alpha = "a" | ... | "z" | "A" | ... | "Z"
+
+ NoNewLineChar := <i>all characters without "\n"</i>
+
+
+== 2.2 Description of Header Lines
+
+The header has an arbitrary number of lines of the format
+"key: value".
+Possible <i>key</i> values for the header are:
+
+* <tt>version: number</tt> [Callgrind]<br>
+This is used to distinguish future profile data file formats.
+A version of 1 is supposed to be upwards
+compatible with the Cachegrind format.
+Optional. If not given, defaults to version 1.
+Otherwise it has to be the first header line.
+
+* <tt>creator: string</tt> [Callgrind]<br>
+Information about the creator of this file, i.e. the
+profile tool or conversion script.
+Optional.
+
+* <tt>pid: process id</tt> [Callgrind]<br>
+This specifies the process ID of the supervised
+application for which this profile was generated.
+Optional.
+
+* <tt>cmd: program name + args</tt> [Cachegrind]<br>
+This specifies the full command line of the supervised
+application for which this profile was generated.
+Optional.
+
+* <tt>part: number</tt> [Callgrind]<br>
+This specifies a sequentially running number for
+profile dumps belonging to the same profile run of an application,
+starting at 1.
+Optional.
+
+* <tt>desc: type: value</tt> [Cachegrind]<br>
+This specifies various information for this dump.
+For some types, the semantic is defined, but any
+description type is allowed. Unknown types are
+ignored.
+
+== 2.3 Description of Body Lines
+
+(to be continued)

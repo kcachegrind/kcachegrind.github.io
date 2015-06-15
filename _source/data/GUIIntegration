@@ -1,0 +1,7 @@
+Currently none.
+
+To come:
+
+* DCOP interface
+* Drag and drop (jump to source line for editors)
+* Clipboard conversions (e.g. function list)

@@ -1,0 +1,49 @@
+= Quick Guides
+
+Fast Walk-troughs over KCachegrind:
+Motivation, Screenshots, Guide and Tips for Usage.
+
+* [[Introduction]]: Why Profiling?
+* [[Screenshots Screenshot Tour]]
+* [[Usage]] of Callgrind/KCachegrind
+* [[Tips]] for the Profiling/Optimization process
+* [[FAQ Frequently Asked Questions]]
+
+= GUI Documentation
+
+More detailed description of the KCachegrind GUI:
+Basic concepts, components, visualizations, and more detailed description
+of visualization views and view options.
+
+* [[GUIModel Data Model for Profile Data]]
+* [[GUIState Visualization State]]
+* [[GUIAreas Parts of the GUI]]
+** [[GUIMenu Menubar/Toolbar Actions]]
+** [[GUIDocks Sidedocks]]
+** [[GUIViews Visualizations]]
+* [[GUIIntegration Desktop Integration]]
+* [[Glossary Glossary of used Terms]]
+
+= Miscellaneous
+
+* [[Installation Compilation/Installation]]
+* [[FAQ Frequently Asked Questions]]
+* [[roadmap/Roadmap Roadmap for future releases]]
+* [[CallgrindFormat Callgrind Format Specification]]
+
+= Talks/Publications
+
+* Presentation at "Kastle 2003"<br>
+Slides in <a href="/docs/slides-n7y-0308.sxi">Open-Office Format</a>,
+and <a href="/docs/slides-n7y-0308.ps.gz">packed PostScript</A>.
+According white paper as
+<a href="/docs/wp-n7y-0308.ps.gz">packed PostScript</a>.
+* Presentation at "aKademy 2004"<br>
+Slides in <a href="/docs/slides-akademy.sxi">Open-Office Format</a>,
+<a href="/docs/slides-akademy.ppt">Powerpoint</a>,
+and
+<a href="/docs/slides-akademy.pdf">PDF</A>.
+
+
+$title    = Documentation
+$location = [[Home]] / Documentation

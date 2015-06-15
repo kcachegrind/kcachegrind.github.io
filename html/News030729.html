@@ -1,0 +1,77 @@
+<head>
+<title>KCachegrind</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> News for 29.7.2003</h2>
+<h3> KCachegrind 0.4.0</h3>
+<p>
+This is an unstable alpha snapshot of the next release. If you are adventurious, check it out, but let me know if it is working for you. You will find a bunch of new features: 
+<p>
+<ul>
+<li>Info panel reorganisation: This was one tab widget, now it can be splitted to no less than 4 areas. See the context menu on tabs. Some old tabs now are separated into 2 (e.g. Callers/Callees), as with the new design it's better to have less info on one tab. 
+New info tab: Interactive, versatile Call Graph View. This uses the "dot" graph layout tool from graphviz in the background. Still, you don't need it for compiling KCachegrind; it's a runtime dependency. 
+</ul>
+<p>
+<ul>
+<li>New info tab: Annotated Assembler view. This needs calltree runs to be called with option --dump-instr=yes. Like the Call Graph, this one uses "objdump" from binutils to get disassembled code; likewise only a runtime option. To see arrows for (conditional) jumps, use calltree with --trace-jump=yes. Note: The annotated source will also get arrows this way, but they are buggy, as consecutive instructions from different source lines won't get jump arrows. 
+</ul>
+<p>
+<ul>
+<li>The "Profile dump" dockable has no functionality so far. This will become a profile file browser and a control GUI for running calltree processes. 
+</ul>
+<p>
+<ul>
+<li>Lots of other unvisible changes. 
+</ul>
+<p>
+<ul>
+<li>Lots of bugs... 
+</ul>
+<p>
+<h3> Calltree Skin V 0.9.3</h3>
+<p>
+<ul>
+<li>Compiles with Valgrind-20030725 and probably even with yet not released Valgrind versions. This is because Valgrind now installs the skin header file (vg_skin.h). And Calltree checks now the skin interface version instead of Valgrind version for compatibility. And the skin version should change much less often than Valgrind versions are released. 
+</ul>
+<p>
+<ul>
+<li>Takes less space with extensive --fn-recursion/--fn-caller options. 
+</ul>
+<p>
+</td></tr></table>
+</div>
+</body>

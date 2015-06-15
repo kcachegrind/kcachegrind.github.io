@@ -1,0 +1,23 @@
+The Visualisation state of a KCachegrind window includes:
+* the primary and secondary event type choosen for display,
+* the function grouping
+(used in the Function Profile list and entity coloring),
+* the profile parts whose costs are to be included in visualization,
+* an active cost entity (e.g. a function selected from the
+function profile dockable),
+* a selected cost entity.
+
+This state influences visualizations.
+
+Visualizations always are shown for one, the active, cost entity.
+When a given visualization is not appropriate for a cost entity,
+it is disabled (e.g. when selecting an ELF object in the group list
+by double-clicking, source annotation for an ELF object make no sense).
+
+E.g. for an active function, the callee list shows all the functions called
+from the active one. One can select one of these functions without making
+it active. If the call-graph is shown nearside, it will automatically
+select the same function.
+
+$title    = Visualization State
+$location = [[Home]] / [[Documentation]] / Visualization State

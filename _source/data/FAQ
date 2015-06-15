@@ -1,0 +1,46 @@
+= 1. Profiling
+
+== 1.1 What is the difference between 'Incl.' and 'Self'?
+
+These are cost attributes for functions regarding some event type.
+As functions can call each other, it makes sense to distinguish the
+cost of the function itself ('Self Cost') and the cost including all called functions ('Inclusive Cost').
+'Self' is sometimes also referred to as 'Exclusive' costs.
+
+So e.g. for main(), you will always have a inclusive cost of almost 100%, whereas the self cost is neglectable when the real work is done in another function.
+
+= 2. User Interface
+
+== 2.1 The toolbar/menubar of my KCachegrind looks so spartanic. Is this normal? 
+
+
+Obviously KCachegrind is wrongly installed on your system. It is recommand to compile it with the installation prefix to be your system wide KDE base directory like 
+
+./configure --prefix=/opt/kde3; make install
+
+for Suse 8.0/8.1. If you choose another directory like $HOME/kde, you should set the environment variable KDEDIR to this directory before running KCachegrind. 
+
+
+== 2.2 What's the blue splitted bar icon to the left of the cost values in the Flat Profile? 
+
+That's a graphical version of the cost in percent. The upper bar of the icon fills up from 0 to 50%, the lower from 50% to 100%. This is done to be able to quickly see cost changes in detail without wasting too much space for the graphic.
+<i>This will change in newer versions, as it is quite confusing.</i>
+
+
+== 2.3 I just installed KCachegrind 0.4.x to get the new Call Graph View.
+But I do not see any arrows among the function rectangles in this view. What's wrong?
+
+You seem to have Suse 8.1 with the GraphViz package 1.8.6 installed. This contains
+a buggy 'dot', responsible for arrows not showing up. Update to a newer version of
+the GraphViz package.
+
+
+== 2.4 If I doubleclick on a function down in the Call Graph View, it shows for the function main the same cost as the selected function. Isn't this supposed to be constant 100% ?
+
+You have activated a function below main() with cost less than main().
+For any function, only that part of the full cost of the function is shown, that is spent while
+the activated function is running. I.e. cost shown for any function can never be higher
+than the cost of the activated function.
+
+$title    = Frequently Asked Questions
+$location = [[Home]] / [[Documentation]] / FAQ

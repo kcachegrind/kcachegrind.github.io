@@ -1,0 +1,9 @@
+= News for 19.7.2003
+
+== Calltree Skin V 0.9.2
+
+Compiles with Valgrind-20030716.
+* Can be compiled with newest snapshot release of Valgrind (20030716) 
+* Added interactive querying of (I)nfo/(S)tate. Try "echo I >cachegrind.cmd" in a working directory of a running calltree process and look into generated "cachegrind.res". Or "echo S >...". This will be used for GUI control of calltree in KCachegrind. Other commands: (D)ump, (Z)ero, (K)ill. 
+* Fixed bug for programs with active stackframes >500. 
+* Enhanced debug output (added option --ct-vstart) 

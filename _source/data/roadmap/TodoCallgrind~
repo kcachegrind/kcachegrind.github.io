@@ -1,0 +1,6 @@
+= Todo for Callgrind
+
+* Allow for arbitrary Event types to be incremented at
+function enter/leave (client messages and command line)
+
+* Data Structure Relation

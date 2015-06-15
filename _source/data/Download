@@ -1,0 +1,65 @@
+= License
+
+Callgrind and KCachegrind are open source software, and licensed under
+GPL V2. More details can be found [[License here]].
+
+= Precompiled Binaries
+
+KCachegrind 0.7.x is available with KDE 4.x.
+If your distribution includes KDE, chances are good that you already have
+it installed, or that a binary package is provided.
+
+Callgrind is merged into Valgrind since version 3.1.
+
+While QCachegrind can be easily compiled on Mac OS-X and Windows, there
+currently are no precompiled packages or installers available. You need
+to compile it from source.
+
+If you know other sources, or have corrections, please send me an EMail.
+
+= Source
+
+* For most recent release, look for the KCachegrind source package in
+the recent KDE release, available from the
+<a href="https://www.kde.org/download">KDE download page</a>.
+
+* Separately packaged KCachegrind source:<br>
+<a href="/files/kcachegrind-0.7.4.tar.gz">kcachegrind-0.7.4.tar.gz</a> (314 KB)<br>
+MD5: a0be465c0f4acfa08bedafb3963a3193
+
+* Access to
+<a href="https://www.kde.org/applications/development/kcachegrind/development">Git</a>
+repository
+
+= Installation
+
+Installation instructions can be found in the source package, file README.
+
+= Change Log
+
+* KCachegrind 0.7.4 (April 5, 2013)
+** Fix loading bug introduced in 0.7.2
+** QCachegrind compiles with Qt5 now
+
+* KCachegrind 0.7.3 (6.11.12)
+** 0.7.2 broke the File Load dialog. This releases only fixes this issue.
+
+* KCachegrind 0.7.2 (17.10.12)
+** This is a bugfix release, with minor changes
+** Multiple files specified on the command line are now loaded into one window
+** Large number of event types supported (previously 20, now 200)
+
+* KCachegrind 0.7.1 (2.2.12)
+** Communicates with Callgrind now by running callgrind_control (needed for VG > 3.7)
+** Minor bugfixes, does not use Qt3-compat features of Qt4 any longer
+
+* KCachegrind 0.7.0 (24.8.11)
+** First release of qcachegrind binary, which only relies on Qt > 4.3 (part of
+the KCachegrind source package)
+** First release of KCachegrind for KDE 4 (independent from KDE release cycle)
+** Understands recently introduced event types for last level cache (in Valgrind 3.6.0)
+
+
+
+$title    = Download/Sources
+$location = [[Home]] / Download

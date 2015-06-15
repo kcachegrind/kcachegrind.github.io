@@ -1,0 +1,144 @@
+<head>
+<title>Visualizations</title>
+</head>
+<body topmargin=0 leftmargin=0 rightmargin=0 marginwidth=0 marginheight=0>
+<table cellspacing=0 cellpadding=0 width=100%>
+<tr>
+<td><img border=0 src="/images/top900x160l.png"></td>
+<td width=100% style="background-image:url('/images/top900x160m.png')">&nbsp;</td>
+<td><img border=0 src="/images/top900x160r.png"></td></tr></table>
+<table cellpadding=0 cellspacing=0 width=100%><tr>
+<td width=100% style="background-image:url('/images/bshadow.png');background-repeat:repeat-x">&nbsp;</td>
+</tr></table>
+<table width=95%>
+<tr><td align=right>
+<i> <a href="Home.html">Home</a> / <a href="Documentation.html">Documentation</a> / Visualizations </i>
+</td></tr></table>
+<p>
+<div style="font-family:sans-serif" align=center>
+<table cellspacing=20 width=95%>
+<tr><td valign=top>
+<a href="Documentation.html">Documentation</a><br>
+<a href="Screenshots.html">Screenshots</a><br>
+<a href="Download.html">Download/Sources</a><br>
+<a href="Links.html">Links</a><br>
+<a href="roadmap-Roadmap.html">Roadmap</a><br>
+<a href="Bugs.html">Bugs & Wishes</a>
+<p>
+<a href="http://sourceforge.net/projects/kcachegrind/">
+Project Page<br>
+<img border=0 src=http://sourceforge.net/sflogo.php?group_id=64331&type=1>
+</a>
+<p>
+<br><br><br>
+<div align=center><img border=0 src="/images/KcgLogoGrey.png"></div>
+<p>
+</td>
+<td valign=top><img border=0 src="/images/vline.png"></td>
+</td><td valign=top width=100%>
+<h2> Event Types</h2>
+This list shows all cost types available
+and the corresponding self and inclusive cost of the
+current active function for that event type.
+<p>
+By choosing an event type from the list,
+you change the type of costs shown 
+all over KCachegrind to be the selected one.
+<p>
+<h2> Call Lists</h2>
+These lists show calls to/from the current active function.
+With ''all' callers/callees functions are meant which can
+be reached in caller/callee direction, even when other functions are
+inbetween.
+<p>
+Call list views include:
+<ul>
+<li>Direct Callers
+<li>Direct Callees
+<li>All Callers
+<li>All Callees
+</ul>
+<p>
+<h2> Maps</h2>
+A treemap visualization of the primary event type, up or down the
+call hierarchy. Each colored rectangle represents a function;
+its size tries to be proportional to the cost spent
+therein while the active function is running
+(however, there are drawing constrains).
+<p>
+For the Caller Map, the graph shows the nested hierarchy of
+all callers of the current activated function; for the
+Callee Map, it shows the nested hierarchy of
+all callees of the current activated function.
+<p>
+Appearance options can be found in the
+in the context menu. To get exact size proportions,
+choose 'Hide incorrect borders'. As this mode can be
+<i>very</i> time consuming, you may want to limit
+the maximum drawn nesting level before.
+'Best' determinates the split direction for children
+from the aspect ratio of the parent.
+'Always Best' decides on remaining space for each sibling.
+'Ignore Proportions' takes space for function name
+drawing <i>before</i> drawing children. Note that
+size proportions can get <i>heavily</i> wrong.
+<p>
+Keyboard navigation is available with the left/right arrow
+keys for traversing siblings, and up/down arrow keys
+to go a nesting level up/down.
+'Return' activates the current item.
+<p>
+<h2> Call Graph</h2>
+This view shows the call graph around the active function.
+<p>
+The shown cost is <b>only</b> the cost which is
+spent while the active function was actually running;
+i.e. the cost shown for main() - if it's visible - should
+be the same as the cost of the active function, as that is
+the part of inclusive cost of main() spent while the active
+function was running.
+<p>
+For cycles, blue call arrows indicate that this is an
+artificial call added for correct drawing which
+actually never happened.
+<p>
+If the graph is larger than the widget area, an overview
+panner is shown in one edge.
+There are similar visualization options as for the
+Call Treemap; the selected function is highlighted.
+<p>
+<h2> Annotations</h2>
+<h3> Source Annotation</h3>
+<p>
+The annotated source list shows the
+source lines of the current active function
+together with (self) cost spent while executing the
+code of a source line. If there was a call
+from a source line, lines with details on the
+call are inserted into the source: the
+(inclusive) cost spent inside of the call,
+the number of calls happening, and the call destination.
+<p>
+Select such a call information line to activate the
+call destination.
+<p>
+<h3> Assembler Annotation</h3>
+<p>
+The annotated assembler list shows the
+machine code instructions of the current selected
+function together with (self) cost spent while
+executing an instruction. If this is a <i>CALL</i>
+instruction, lines with details on the
+call are inserted into the source:
+the (inclusive) cost spent inside of the call,
+the number of calls happening, and the call destination.
+<p>
+The disassembler output shown is generated with
+the 'objdump' utility from the 'binutils' package.
+<p>
+Select such a call information line to activate the
+call destination.
+<p>
+</td></tr></table>
+</div>
+</body>

@@ -1,0 +1,9 @@
+= Screenshot 4
+
+Source intermixed with profiling data. 
+
+[[Shot4Large KcgShot4.png|center]]
+
+KCachegrind can show line by line information of cost spent in your program. This needs compilation with debug info enabled (Option -g), and access to the source. There is no dependence on a particular programming language.
+
+In this screenshot, grouping "Class" is selected (this grouping is only usefull for C++). Visualisation in the "Trace Part Overview" is 'Partitioning'. You see the partitioning of the runtime dependent on the class of the functions executed. 

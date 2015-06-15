@@ -1,0 +1,59 @@
+= Dockables
+
+Dockables are sidewindows which can be placed at any border of an KCachegrind window. They always contain a list of cost entities sorted in some manner.
+
+* Function Profile<br>
+The Function Profile is a list of functions showing inclusive and exlusive
+cost, call count, name and position of functions.
+
+* Parts Overview
+* Call Stack
+
+= Visualization Area
+
+The visualization area, typically the right part of a KCachegrind main window,
+is made up of one (default)
+or more ''Tab Views'', either lined up horizontally
+or vertically. Each tab view holds different visualization views
+of only one cost entity at a time.
+The name of this entity is given at the top of the tab view.
+If there are multiple tab views, only one is active. The entity name
+in the active tab view is shown in bold and determines the active cost
+entity of the KCachegrind window.
+
+== Areas of a Tab View
+
+Each tab view can hold up to four view areas, namely Top, Right, Left, Bottom.
+Each area can hold multiple stacked visualization views. The visible view of an area is selected by a tab bar. Tab bars of the top and right area are at the top, tab bars of the left and bottom area are at the bottom. You can specify which kind of visualization should go into which area by using the context menu of the tabs.
+
+== Synchronized Visualization via Selected Entity in a Tab View
+
+Besides an active entity, each tab view has an selected entity.
+As most visualization types show multiple entities with the active one
+somehow centered, you change the selected item by navigating inside
+of an visualization (by clicking with the mouse or using the keyboard).
+Typically, selected items are shown in an highlighted state. By changing
+the selected entity in one of the visualization of a tab view, all other
+visualizations in tab view accordingly highlight the new selected entity.
+
+== Synchronization between Tab Views
+
+If there are multiple tab views, a selection change in one tab view leads
+to an activation change in the next (to right/to bottom) tab view. This
+kind of linkage e.g. should allow for fast browsing in call graphs.
+
+== Layouts
+
+The layout of all the tab views of a window can be saved
+(see menu item View/Layout). After duplicating the current layout
+(Ctrl+Plus or menu) and
+changing some sizes or moving a visualization view to another area of an
+tab view, you can quickly switch between the old and the new layout via
+Ctrl+Left/Right. The set of layouts will be stored between KCachegrind
+sessions of the same profiled command.
+You can make the current set of layouts as the default one
+for new KCachegrind sessions, or restore to the default layout set.
+
+
+$title    = GUI Components
+$location = [[Home]] / [[Documentation]] / GUI Components
