@@ -6,8 +6,10 @@ A Callgrind profile data file is an expression of
 "ProfileDataFile" in the following grammar
 ("+" means "at least once", "?" optional).
 
- ProfileDataFile := FormatVersion? Creator? PartData*
+ ProfileDataFile := FormatSpec? FormatVersion? Creator? PartData*
 
+ FormatSpec := "# callgrind format\n"
+ 
  FormatVersion := "version:" Space* Number "\n"
 
  Creator := "creator:" NoNewLineChar* "\n"
@@ -91,19 +93,34 @@ A Callgrind profile data file is an expression of
 
  NoNewLineChar := <i>all characters without "\n"</i>
 
+A profile data file ("ProfileDataFile") starts with basic information
+such as a format marker, the version and creator information, and then
+has a list of parts, where each part has its own header and
+body. Parts typically are different threads and/or time spans/phases
+within a profiled application run.</para>
+
+Note that callgrind_annotate currently only supports profile data
+files with one part. Callgrind may produce multiple parts for one
+profile run, but defaults to one output file for each part.</para>
 
 == 2.2 Description of Header Lines
 
-The header has an arbitrary number of lines of the format
-"key: value".
-Possible <i>key</i> values for the header are:
+Basic information in the first lines of a profile data file:
+
+* <tt># callgrind format</tt> [Callgrind]<br>
+This line specifies that the file is a callgrind profile, and it has
+to be the first line. It was added late to the format (with Valgrind
+3.13) and is optional, as all readers also should work with older
+callgrind profiles not including this line.  However, generation of
+this line is recommended to allow desktop environments and file
+managers to uniquely detect the format.</para>
 
 * <tt>version: number</tt> [Callgrind]<br>
-This is used to distinguish future profile data file formats.
-A version of 1 is supposed to be upwards
-compatible with the Cachegrind format.
-Optional. If not given, defaults to version 1.
-Otherwise it has to be the first header line.
+This is used to distinguish future profile data file formats.  A
+version of 1 is supposed to be upwards compatible with the Cachegrind
+format.  Optional. If not given, version 1 is assumed.  Otherwise,
+it has to follow directly after the format specification (i.e. be the
+first line if the optional format specification is skipped)
 
 * <tt>creator: string</tt> [Callgrind]<br>
 Information about the creator of this file, i.e. the

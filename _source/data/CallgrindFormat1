@@ -1,44 +1,43 @@
 = 1. Overview
 
-The profile data format is ASCII based, and
-it is the native format KCachegrind can handle.
+The profile data format is ASCII based, and it is the native format
+KCachegrind can handle.
 
-It is used by Callgrind, and derived from the format
-used by the Cachegrind tool part of Valgrind:
-it is kept upwards compatible, i.e. data
-written by Cachegrind can be loaded into KCachegrind
-without any problems.
+It is used by Callgrind, and derived from the format used by the
+Cachegrind tool part of Valgrind: it is kept upwards compatible,
+i.e. data written by Cachegrind can be loaded into KCachegrind without
+any problems.
 
 This chapter gives on overview of format features and examples. For
-detailed syntax, look at the format reference. The reference also
-contains information about which version of KCachegrind supports which
-format feature.
-
-<i>(Especially, "summary:" header lines are optional starting
-with KCachegrind 0.4.5, and are mandatory with previous versions).</i>
+detailed syntax, look at the format reference below. The reference
+also contains information about which version of KCachegrind supports
+which format feature.
 
 == 1.1 Basic Structure
 
-Each file has a header part of an arbitrary number of lines
-of the format "key: value". The lines with key "positions" and
-"events" define the meaning of cost lines in the second part
-of the file:
-the value of "positions" is a list of subpositions, and
-the value of "events" is a list of event type names.
-Cost lines consist of subpositions followed by 64-bit counters
-for the events, in the order specified by the "positions" and
-"events" header line.
+To uniquely specify that a file is a callgrind profile, it should add
+"# callgrind format" as first line. This is optional but recommended
+for easy format detection.
 
-The "events" header line is always required
-in contrast to the optional line for "positions",
-which defaults to "line", i.e. a line number of some source file.
-In addition, the second part of the file contains position
-specifications of the form "spec=name". "spec" can be e.g. "fn" for a
-function name or "fl" for a file name. Cost lines are always
-related to the function/file specifications given directly before.
+Each file has a header part of an arbitrary number of lines of the
+format "key: value". The lines with key "positions" and "events"
+define the meaning of cost lines in the second part of the file: the
+value of "positions" is a list of subpositions, and the value of
+"events" is a list of event type names.  Cost lines consist of
+subpositions followed by 64-bit counters for the events, in the order
+specified by the "positions" and "events" header line.
+
+The "events" header line is always required in contrast to the
+optional line for "positions", which defaults to "line", i.e. a line
+number of some source file.  In addition, the second part of the file
+contains position specifications of the form "spec=name". "spec" can
+be e.g. "fn" for a function name or "fl" for a file name. Cost lines
+are always related to the function/file specifications given directly
+before.
 
 == 1.2 Simple Example
 
+ # callgrind format
  events: Cycles Instructions Flops
  fl=file.f
  fn=main
@@ -100,6 +99,7 @@ The following example shows 3 functions, "main", "func1",
 and "func2". Function "main" calls "func1" once and "func2"
 3 times. "func1" calls "func2" 2 times.
 
+ # callgrind format
  events: Instructions
 
  fl=file1.c
@@ -151,6 +151,7 @@ you can use ID 1 for both a file name and a symbol name.
 
 With string compression, the example from 1.4 looks like this:
 
+ # callgrind format
  events: Instructions
 
  fl=(1) file1.c
@@ -182,6 +183,7 @@ Especially, you can define name compression mappings directly after
 the header, and before any cost lines. Thus, the above example can also be
 written as
 
+ # callgrind format
  events: Instructions
 
  # define file ID mapping
@@ -231,6 +233,7 @@ subposition.
 Assume the following example (subpositions can always be specified as
 hexadecimal numbers, beginning with "0x"):
 
+ # callgrind format
  positions: instr line
  events: ticks
 
@@ -241,6 +244,7 @@ hexadecimal numbers, beginning with "0x"):
 
 With subposition compression, this looks like
 
+ # callgrind format
  positions: instr line
  events: ticks
 
